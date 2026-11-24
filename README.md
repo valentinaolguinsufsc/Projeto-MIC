@@ -42,7 +42,7 @@ Nos últimos 30 s o buzzer apita a cada segundo.
 
 | Desafio | Objetivo | O que conta como erro |
 |---|---|---|
-| Binário | Converter o número hexadecimal do LCD para decimal. Dígitos digitam, `*` apaga, `#` confirma | Confirmar um valor errado |
+| Hexadecimal | Converter o número hexadecimal do LCD para decimal. Dígitos digitam, `*` apaga, `#` confirma | Confirmar um valor errado |
 | Cofre | Girar os 2 potenciômetros até as faixas certas (A0 entre 600 e 700, A1 entre 300 e 400) e manter por 1 s. Cada LED acende quando o seu potenciômetro está na faixa | Não tem erro |
 | Sequência | Repetir nos 2 botões a sequência mostrada pelos 2 LEDs (1, 2, 2, 1, 2) | Apertar o botão errado |
 | Fios | Ligar cada fio superior ao inferior da mesma cor e manter por 0,5 s. Ao concluir, o LCD mostra um número sorteado de 1 a 9 | Ligar o vermelho no amarelo |
