@@ -9,7 +9,7 @@ O jogador precisa desarmar uma bomba resolvendo 4 desafios antes que o cronômet
 |---|---|
 | `escape_room/escape_room.ino` | Sketch integrado, o único que vai para o Arduino |
 | `bomba.ino` | Fluxo do jogo original (dificuldade, cronômetro, LCD, display) |
-| `binario_decimal1 (2).ino` | Desafio hexadecimal para decimal original |
+| `hexadecimal_decimal1 (2).ino` | Desafio hexadecimal para decimal original |
 | `cofre.ino` | Desafio do cofre original |
 | `desafio_sequencia.ino` | Desafio da sequência original |
 | `fios.ino` | Desafio dos fios original |
@@ -44,7 +44,7 @@ Nos últimos 30 s o buzzer apita a cada segundo.
 
 | Desafio | Objetivo | O que conta como erro |
 |---|---|---|
-| Binário | Converter o número hexadecimal do LCD para decimal. Dígitos digitam, `*` apaga, `#` confirma | Confirmar um valor errado |
+| Hexadecimal | Converter o número hexadecimal do LCD para decimal. Dígitos digitam, `*` apaga, `#` confirma | Confirmar um valor errado |
 | Cofre | Girar os 2 potenciômetros até as faixas certas (A0 entre 600 e 700, A1 entre 300 e 400) e manter por 1 s. Cada LED acende quando o seu potenciômetro está na faixa | Não tem erro |
 | Sequência | Repetir nos 2 botões a sequência mostrada pelos 2 LEDs (1, 2, 2, 1, 2) | Apertar o botão errado |
 | Fios | Ligar cada fio superior ao inferior da mesma cor e manter por 0,5 s. Ao concluir, o LCD mostra um número sorteado de 1 a 9 | Ligar o vermelho no amarelo |
@@ -184,14 +184,14 @@ Nomes que não aparecem nas tabelas abaixo continuam iguais aos originais.
 | Trecho do `loop()` que lia o cronômetro e atualizava o display | `servicoBomba()` |
 | Fim de jogo dentro do `loop()` (`jogoEncerrado = 1`) | `encerrarJogo(venceu)` e `reiniciarJogo()` |
 
-Novos nomes na bomba: `mostrarTempoLCD()`, `tempoLCDPendente`, `COLUNA_TEMPO_LCD`, `teclaPressionada`, `inicioTeclaPressionada`, `INTERVALO_VARREDURA_MS`, `DEBOUNCE_TECLADO_MS`, `asteriscoSegurado()`, `TEMPO_REINICIO_MS`, `registrarErro()`, `bip()`, `atualizarBip()`, `telaExplosao()`, `telaVitoria()`, `telaDesafio()`, `sortearOrdem()`, `iniciarDesafioAtual()`, `executarDesafioAtual()`, as variáveis `erros`, `ordemDesafios`, `indiceDesafio`, `desafioIniciado`, `vitoria`, `esperarAte`, `momentoFim`, `teclaJogo`, `contadorSegundo` e as constantes `PENALIDADE_FACIL_S`, `PENALIDADE_DIFICIL_S`, `MAX_ERROS_JOGO`, `TEMPO_AVISO_S`, `PAUSA_DESAFIOS_MS`, `TEMPO_EXPLOSAO_MS`, `NUM_DESAFIOS`, `DESAFIO_BINARIO`, `DESAFIO_COFRE`, `DESAFIO_SEQUENCIA` e `DESAFIO_FIOS`.
+Novos nomes na bomba: `mostrarTempoLCD()`, `tempoLCDPendente`, `COLUNA_TEMPO_LCD`, `teclaPressionada`, `inicioTeclaPressionada`, `INTERVALO_VARREDURA_MS`, `DEBOUNCE_TECLADO_MS`, `asteriscoSegurado()`, `TEMPO_REINICIO_MS`, `registrarErro()`, `bip()`, `atualizarBip()`, `telaExplosao()`, `telaVitoria()`, `telaDesafio()`, `sortearOrdem()`, `iniciarDesafioAtual()`, `executarDesafioAtual()`, as variáveis `erros`, `ordemDesafios`, `indiceDesafio`, `desafioIniciado`, `vitoria`, `esperarAte`, `momentoFim`, `teclaJogo`, `contadorSegundo` e as constantes `PENALIDADE_FACIL_S`, `PENALIDADE_DIFICIL_S`, `MAX_ERROS_JOGO`, `TEMPO_AVISO_S`, `PAUSA_DESAFIOS_MS`, `TEMPO_EXPLOSAO_MS`, `NUM_DESAFIOS`, `DESAFIO_HEXADECIMAL`, `DESAFIO_COFRE`, `DESAFIO_SEQUENCIA` e `DESAFIO_FIOS`.
 
-### binario_decimal1 (2).ino
+### Hexadeicmal_decimal1 (2).ino
 
 | Original | No sketch integrado |
 |---|---|
-| `setup()` | `binario_iniciar()` |
-| `loop()` | `binario_executar()` |
+| `setup()` | `hexadecimal_iniciar()` |
+| `loop()` | `hexadecimal_executar()` |
 | `static uint8_t erros` (erros do desafio) | `erros` global da bomba (erros do jogo todo) |
 | `MAX_ERROS` | `MAX_ERROS_JOGO` (na bomba) |
 | `PCF_ENDERECO 0x20` | `PCF_ENDERECO LCD_ADDR` (mesmo valor, definido pela bomba) |
